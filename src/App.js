@@ -16,13 +16,13 @@ const App = () => {
                 <div className="input-container">
                     <div className="quality">
                         <div className="button">
-                            <a
+                            <p
                                 className="quantity_minus"
                                 title="Decrement"
                                 onClick={() => dispatch(decNumber())}
                             >
                                 <span>-</span>
-                            </a>
+                            </p>
                         </div>
                         <input
                             type="text"
@@ -31,13 +31,13 @@ const App = () => {
                             value={myState}
                         />
                         <div className="button">
-                            <a
+                            <p
                                 className="quantity_plus"
                                 title="Increment"
                                 onClick={() => dispatch(incNumber())}
                             >
                                 <span>+</span>
-                            </a>
+                            </p>
                         </div>
                     </div>
                 </div>
