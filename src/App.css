@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+  font-family: 'Montserrat', sans-serif;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.container{
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  align-items: center;  
+  background: #472D2D;
+  line-height: 50px;
+}
+.header-container h1{
+  color: #FFB3B3;
+  font-family: 'Poppins', sans-serif;
+
+}
+.header-container h3{
+  color: #A77979;
+}
+.quality{
+  background: #A77979;
+  border-radius: 5px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
+  align-items: center;
+}
+.quantity_input{  
+  background: #fff;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  color: #A77979;
+  width: 100px;
+}
+.quantity_input:focus{
+  outline: none;
+}
+.button{
+  padding: 0 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in
+}
+.button:hover{
+  background: #FFB3B3;
+  border-radius: 5px;
+}
+.quantity_minus span,.quantity_plus span{
+  font-size: 25px;
+  color: #fff;
+  user-select: none; 
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 800px) {
+  .container {
+    line-height: 40px;
   }
-  to {
-    transform: rotate(360deg);
+  .header-container h1{
+    font-size: 25px;    
+  }
+  .header-container h4{
+    font-size: 15px;
+  }
+  .quantity_input {
+    height: 35px;
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 650px) {
+    .container {
+    line-height: 40px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
   }
 }

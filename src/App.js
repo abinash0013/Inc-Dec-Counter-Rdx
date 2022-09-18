@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { useSelector, useDispatch } from "react-redux";
+import { incNumber, decNumber } from "./action/index";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const myState = useSelector((state) => state.changeTheNumber);
+    const dispatch = useDispatch();
+    return (
+        <>
+            <div className="container">
+                <div className="header-container">
+                    <h1>Increment and Decrement Counter</h1>
+                    <h3>Using React and Redux</h3>
+                </div>
+                <div className="input-container">
+                    <div className="quality">
+                        <div className="button">
+                            <a
+                                className="quantity_minus"
+                                title="Decrement"
+                                onClick={() => dispatch(decNumber())}
+                            >
+                                <span>-</span>
+                            </a>
+                        </div>
+                        <input
+                            type="text"
+                            name="quantity"
+                            className="quantity_input"
+                            value={myState}
+                        />
+                        <div className="button">
+                            <a
+                                className="quantity_plus"
+                                title="Increment"
+                                onClick={() => dispatch(incNumber())}
+                            >
+                                <span>+</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
 
 export default App;
